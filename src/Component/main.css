@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+    background: #151718 !important;
+}
+
+.Fixed_side{
+    width: 16%;
+    margin-left:1%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
+}
+.Logo_txt{
+    /* position: absolute; */
+width: 208px;
+height: 39px;
+left: 26px;
+top: 57px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 45px;
+
+color: #FFFFFF;
+}
+.Side_main{
+    margin-top: 20%;
+    
+}
+.Side_button{
+    /* position: relative; */
+    display: flex;
+    flex-direction: row;
+width: 100%;
+height: 3.4rem;
+left: 15px;
+/* top: 190px; */
+
+background: #151718;
+border-radius: 9px;
+}
+.Side_button:hover{
+    background-color: #323337;
+
+}
+.div_p{
+    position: absolute;
+width: 61px;
+height: 27px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 33px;
+/* identical to box height */
+margin-left: 3%;
+
+color: #FFFFFF;
+
+}
+.separator{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 100%;
+height: 1px;
+background-color: #ffffff;
+transform: rotate(-0.16deg);
+}
+.logo_img_1{
+    background-image: url(../../public/images/logo_img_1.png);
+    width: 35px;
+height:35px;
+margin-left: 2%;
+margin-top: 10px;
+background-size: 40px 35px;
+}
+.logo_img_2{
+    background-image: url(../../public/images/logo_img_2.png);
+    width: 35px;
+height:35px;
+margin-left: 2%;
+margin-top: 10px;
+background-size: 40px 35px;
+}
+.logo_img_3{
+    background-image: url(../../public/images/logo_img_3.png);
+    width: 35px;
+    white-space: nowrap;
+height:35px;
+margin-left: 2%;
+margin-top: 10px;
+background-size: 30px 35px;
+background-repeat: no-repeat;
+}
+.logo_img_4{
+    background-image: url(../../public/images/logo_img_4.png);
+    width: 35px;
+    white-space: nowrap;
+height:35px;
+margin-left: 2%;
+margin-top: 10px;
+background-size: 30px 35px;
+background-repeat: no-repeat;
+}
+.logo_img_5{
+    background-image: url(../../public/images/logo_img_5.png);
+    width: 35px;
+    white-space: nowrap;
+height:35px;
+margin-left: 2%;
+margin-top: 10px;
+background-size: 30px 30px;
+background-repeat: no-repeat;
+}
+.logo_img_6{
+    background-image: url(../../public/images/logo_img_6.png);
+    width: 35px;
+    white-space: nowrap;
+height:35px;
+margin-left: 2%;
+margin-top: 10px;
+background-size: 40px 35px;
+}
+.logo_img_7{
+    background-image: url(../../public/images/logo_img_7.png);
+    width: 35px;
+    white-space: nowrap;
+height:35px;
+margin-left: 2%;
+margin-top: 10px;
+background-size: 40px 35px;
+}
+.logo_img_8{
+    background-image: url(../../public/images/logo_img_8.png);
+    width: 35px;
+    white-space: nowrap;
+height:35px;
+margin-left: 2%;
+margin-top: 10px;
+background-size: 40px 35px;
+}

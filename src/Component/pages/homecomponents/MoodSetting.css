@@ -1,0 +1,65 @@
+.mood-container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .radio-buttons {
+    width: 301px;
+    margin-bottom: 30px;
+
+  }
+  
+  .radio-buttons input[type="radio"] {
+    display: none;
+  }
+  
+  .radio-buttons label {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #ddd;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 3px;
+  }
+  
+  .radio-buttons label:hover {
+    background-color: #ccc;
+  }
+  
+  .radio-buttons input[type="radio"]:checked + label {
+    background-color: #ff4081;
+    color: #fff;
+  }
+  
+  .scroll-button {
+    position: relative;
+    width: 200px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .scroll-knob {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    background-color: #ff4081;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .scroll-knob:active {
+    background-color: #e53935;
+  }
+  .mood-container h2{
+    font-size: 20px;
+    font-family: 'Roboto';
+    font-style: normal;
+    color: #fff;
+  }
+  

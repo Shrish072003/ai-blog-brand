@@ -1,0 +1,17 @@
+.wrap-login100{
+    background: #242627 !important;
+}
+.login100-form-title{
+    color: #fff !important;
+}
+.txt2{
+    font-size: 20px !important;
+    color: #fff !important;
+    text-decoration: underline !important;
+}
+.container-login100::before{
+    display: none !important;
+}
+.container-login100{
+    margin-top: -44.5% !important;
+}
