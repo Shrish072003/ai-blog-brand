@@ -27,8 +27,8 @@ function BlogsIdeas() {
     if (includeTags) {
       messageWithoutKeywords = message; // Store the original message without changes
       message +=
-        " Generate " +
-        (myInputValue() !== '' ? myInputValue() + " sub topics and write 300 words every sub topic and include these keywords " + tags.join(", ") : '') +
+        " - Generate " +
+        (myInputValue() !== '' ? myInputValue() + " blogs topic and include these keywords " + tags.join(", ") : '') +
         ".";
     }
     
@@ -44,7 +44,7 @@ function BlogsIdeas() {
   
     setLoading(true);
     axios
-      .post("http://localhost:8000/chat", {
+      .post("http://localhost:9000/chat", {
         question: message,
       })
       .then((response) => {
@@ -102,7 +102,7 @@ function BlogsIdeas() {
         if (!isNaN(inputValue) && inputValue <= 2200) {
           myInput.max = 2200;
           myInput.maxLength = 4;
-          return inputValue / 200; // Divide the value by 200 and return
+          return inputValue / 1;
         } else {
           return "The input cannot be empty.";
         }
@@ -117,6 +117,10 @@ function BlogsIdeas() {
     color: 'white',
     marginBottom: '4px',
   };
+
+  
+
+
 
   return (
     <div className="container">
@@ -165,7 +169,7 @@ function BlogsIdeas() {
               type="text"
               ref={textareaRef}
               className="form-control col"
-              placeholder="Send a Message..."
+              placeholder="Give a reference or keywords..."
               onKeyDown={handleKeyDown}
             />
             <button disabled={loading} className="btn btn-success" onClick={handleSend}>
@@ -177,7 +181,7 @@ function BlogsIdeas() {
       </div>
       <main className='separator_col'></main>
       <main className="separator_col_top"></main>
-      <main className="Keywoard_block_main">
+    <main className="Keywoard_block_main">
         <main className="Keywoard_block">
           <div className="inline_keyword">
             <div className="Keyword_text"><div className="key_text">Keyword</div></div>
@@ -201,7 +205,7 @@ function BlogsIdeas() {
               required
               className="tag-input"
               type="text"
-              placeholder="Add tag"
+              placeholder="Add tag & wildcards"
               value={inputValue}
               onChange={(event) => setInputValue(event.target.value)}
               onKeyDown={handleKeywordDown}
@@ -211,14 +215,14 @@ function BlogsIdeas() {
         <div>
           <MoodSetting />
           <div>
-            <p style={paragraphStyle}>Words Count max 2000*</p>
+            <p style={paragraphStyle}>No Of Blog Topics*</p>
             <input
               type="number"
               required
               id="my-input"
               max="2200"
               maxLength="4"
-              placeholder="Enter your word length*"
+              placeholder="No Of Blog Topics*"
               style={{
                 background: "black",
                 color: "white",

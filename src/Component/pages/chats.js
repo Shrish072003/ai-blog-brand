@@ -3,6 +3,8 @@ import "./page.css";
 import axios from "axios";
 import MoodSetting from "./homecomponents/index";
 import sendIcon from '../images/send.png';
+import copyIcon from '../images/copy.png';
+
 
 const YOU = "you";
 const AI = "ai";
@@ -22,24 +24,29 @@ function Chats() {
 
   const handleSend = () => {
     let message = textareaRef.current.value;
+    let messageWithoutKeywords = message; // Separate variable to store message without keywords
+  
     if (includeTags) {
+      messageWithoutKeywords = message; // Store the original message without changes
       message +=
-        " Generate " +
+        " - Generate " +
         (myInputValue() !== '' ? myInputValue() + " sub topics and write 300 words every sub topic and include these keywords " + tags.join(", ") : '') +
         ".";
     }
-    updateQNA(YOU, message);
-
+    
+    // Update QnA state with the original message without keywords
+    updateQNA(YOU, messageWithoutKeywords);
+  
     textareaRef.current.value = "";
-
+  
     if (message.trim() === '' && !includeTags) {
       // Check if the message is empty and tags are not included
       return; // Don't send the message if it's empty and tags are not included
     }
-
+  
     setLoading(true);
     axios
-      .post("http://localhost:8000/chat", {
+      .post("http://localhost:9000/chat", {
         question: message,
       })
       .then((response) => {
@@ -49,6 +56,7 @@ function Chats() {
         setLoading(false);
       });
   };
+  
 
   useEffect(() => {
     chatRef.current.scrollTop = chatRef.current.scrollHeight; // Scroll to the bottom of the chat window
@@ -87,6 +95,7 @@ function Chats() {
     setTags(newTags);
   };
 
+
   const myInputValue = () => {
     const myInput = document.getElementById("my-input");
     if (myInput !== null) {
@@ -96,9 +105,9 @@ function Chats() {
         if (!isNaN(inputValue) && inputValue <= 2200) {
           myInput.max = 2200;
           myInput.maxLength = 4;
-          return inputValue / 200; // Divide the value by 200 and return
+          return inputValue / 100; // Divide the value by 200 and return
         } else {
-          return "Please enter a valid number up to 2200.";
+          return "The input cannot be empty.";
         }
       } else {
         return "The input cannot be empty.";
@@ -110,6 +119,25 @@ function Chats() {
   const paragraphStyle = {
     color: 'white',
     marginBottom: '4px',
+  };
+  const buttonStyle = {
+    color: "rgb(255, 255, 255)",
+  width: "3%",
+  marginTop: "5px",
+  background: "rgb(50, 51, 55)",
+  borderRadius: "10px",
+  padding: "13px",
+  writingMode: "horizontal-tb",
+  cursor: "pointer",
+  };
+  const imageStyle = {
+    width: "90%",
+  };
+
+  const handleCopyToClipboard = (content) => {
+    navigator.clipboard.writeText(content)
+      .then(() => alert("Content copied to clipboard!"))
+      .catch((error) => console.error("Failed to copy content: ", error));
   };
 
   return (
@@ -137,6 +165,12 @@ function Chats() {
                   className="avtar"
                 />
                 <div className="output">{renderContent(qna)}</div>
+                <div
+                    style={buttonStyle}
+                    onClick={() => handleCopyToClipboard(qna.value)}
+                  >
+                   <img  style={imageStyle} src={copyIcon} alt="Copy text"/>
+                  </div>
               </div>
             );
           })}
@@ -148,7 +182,7 @@ function Chats() {
                 alt=""
                 className="avtar"
               />
-              <p>Typing...</p>
+              <p>Genrating a better optimized content for you...</p>
             </div>
           )}
         </div>
@@ -159,7 +193,7 @@ function Chats() {
               type="text"
               ref={textareaRef}
               className="form-control col"
-              placeholder="Send a Message..."
+              placeholder="The Future of AI Writing - Type a topic..."
               onKeyDown={handleKeyDown}
             />
             <button disabled={loading} className="btn btn-success" onClick={handleSend}>

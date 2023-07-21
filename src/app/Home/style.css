@@ -5,6 +5,12 @@
     justify-content: center;
     height: 100vh;
   }
+  div, section, a{
+    text-decoration: none !important;
+  }
+  Link{
+    text-decoration: none;
+  }
   
   .frame .div {
     background-color: #000000;

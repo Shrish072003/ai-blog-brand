@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useCallback} from "react"
-import { BallTriangle } from  'react-loader-spinner'
+import { Dna } from  'react-loader-spinner'
 import {Box, Grid, TextField, Button, Container, Typography, Table ,TableBody , TableCell ,TableContainer , TableHead ,TableRow } from '@mui/material';
 import CountrySelect from '../../Component/CountrySelect'
 import LanguageSelect from '../../Component/LanguageSelect'
@@ -198,8 +198,8 @@ console.log(inputValue)
     }
 
 
-      console.log(inpurValue)
-      console.log(inputValue)
+      // console.log(inpurValue)
+      // console.log(inputValue)
       setLoading(true)
       
    
@@ -444,7 +444,7 @@ const autoWildCard = (id) => setWildData(id);
         {messageerror && 
         <Grid   container   spacing={0}   direction="column"   alignItems="center"   justifyContent="center"   style={{ minHeight: '60vh' }} >
          <h2 className="errorHeading">Oops! Something went wrong</h2>
-         <Box className="errorMessage" mt={5}>Please take a screenshot of <a href="https://screenful.com/how-to-open-the-browser-console" target="_blank" rel="noopener noreferrer" className="errorMessage erroranchor" >browser developer console</a> and send this to our live chat support agent</Box>
+         <Box className="errorMessage" mt={5}>Please take a screenshot of <a href="https://screenful.com/how-to-open-the-browser-console" target="_blank" rel="noopener noreferrer" className="errorMessage erroranchor" >browser developer console</a> and send this to our mail id shrish@brandklin.com </Box>
           
         </Grid>
         }
@@ -452,7 +452,8 @@ const autoWildCard = (id) => setWildData(id);
 
         {loading ? <Grid   container   spacing={0}   direction="column"   alignItems="center"   justifyContent="center"   style={{ minHeight: '80vh' }} >
         <Grid item md={7}>
-        <BallTriangle color="#FF00DF" ariaLabel="ball-triangle-loading" />
+        <Dna height="100"
+  width="100" ariaLabel="dna-loading" />
         </Grid>   
         <Grid item md={5}>
         </Grid> 

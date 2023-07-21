@@ -30,7 +30,6 @@ function Images() {
 
   return (
     <div className="app">
-      <h1>React AI Image Generator</h1>
       {loading ? (
         <h2> Image generation in progress ... Please wait!</h2>
       ) : (<></>)}

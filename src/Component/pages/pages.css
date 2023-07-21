@@ -378,3 +378,34 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.css-19r6kue-MuiContainer-root {
+  width: 100% !important;
+  margin-left: auto;
+  box-sizing: border-box;
+  /* margin-right: inherit !important; */
+  display: block;
+  padding-left: 16px;
+  padding-right: 16px;
+  background: #323337;
+  color: #fff;
+  max-height: 100vh;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root,.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root, .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root{
+  color: #fff !important;
+  border-radius: 50px !important;
+}
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline, .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root{
+  border-color: #fff !important;
+}
+.css-14lo706>span{
+  color: #fff !important;
+}
+.mDeSr, .bYqfXw, .bYqfXw {background-color: aqua !important;}
+#root{
+  display: flex;
+}
+.MuiBox-root section{
+  background-color: #fff;
+}
