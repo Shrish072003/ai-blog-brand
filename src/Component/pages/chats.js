@@ -46,7 +46,7 @@ function Chats() {
   
     setLoading(true);
     axios
-      .post("http://localhost:9000/chat", {
+      .post("http://24.199.99.229:8080/chat", {
         question: message,
       })
       .then((response) => {
